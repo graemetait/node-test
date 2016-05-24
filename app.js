@@ -8,6 +8,6 @@ app.use(shib.authenticate);
 
 app.get('/', shib.sessionResponse);
 
-return app.listen(3333, function() {
+return app.listen(process.env.NODE_PORT || 3333, function() {
   console.log('Listening on', this.address().port);
 });
